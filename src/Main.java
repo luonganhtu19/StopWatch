@@ -17,12 +17,16 @@ public class Main  {
                     return ;
                 case 1:
                     array=createElement();
+                    System.out.println(" Arrays: ");
+                    display(array);
                     break;
                 case 2:
                     stopWatch.getStartTime();
                     array=sortArrays(array,stopWatch);
                     stopWatch.getEndTime();
                     time=stopWatch.getElapsedTime();
+                    System.out.println("Arrays sort");
+                    display(array);
                     //System.out.println(stopWatch.getElapsedTime());
                     break;
                 case 3:
@@ -51,7 +55,7 @@ public class Main  {
         }while (number<=0);
         int[] arrays= new int[number];
         for (int i = 0; i < number; i++) {
-            arrays[i]=(int) Math.random()*number+1;
+            arrays[i]=(int) (Math.random()*number+1);
         }
         return arrays;
     }
@@ -83,5 +87,10 @@ public class Main  {
         //stopWatch.getEndTime();
         //System.out.println(stopWatch.getElapsedTime());
         return array;
+    }
+    public static void display(int[] array){
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i]+" ");
+        }
     }
 }
